@@ -95,7 +95,7 @@ botonEliminar.addEventListener("click", async function () {
         setTimeout(() => {
             resolve(Swal.fire({
                 title: "¿Estás seguro que quieres eliminar este gusto?",
-                text: "",  // Puedes dejar el campo de texto vacío si no necesitas un texto adicional
+                text: "",  
                 icon: "question"
             }));
         }, 0,5);
