@@ -58,7 +58,12 @@ let contadorId = 1;
 boton.addEventListener("click", function () {
     let valorInput = input.value;
     if (valorInput.trim() === "") {
-        alert("Por favor, ingresa un gusto de helado antes de agregarlo.");
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Por favor, ingresa un gusto de helado antes de agregarlo",
+            footer: '<a href="#">¿Por qué tengo este problema?</a>'
+        });
         return; 
     }
 
@@ -88,7 +93,11 @@ botonEliminar.addEventListener("click", async function () {
     // Utilazando confirm como operación asíncrona simulada con setTimeout
     const confirmacion = await new Promise((resolve) => {
         setTimeout(() => {
-            resolve(confirm("¿Estás seguro que quieres eliminar este gusto?"));
+            resolve(Swal.fire({
+                title: "¿Estás seguro que quieres eliminar este gusto?",
+                text: "",  // Puedes dejar el campo de texto vacío si no necesitas un texto adicional
+                icon: "question"
+            }));
         }, 0,5);
     });
 
